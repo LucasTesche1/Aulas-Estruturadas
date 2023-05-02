@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+	int i=0;
+	
+	 struct Aluno{
+	 	int matricula;
+	 	char nome[20];
+	 	
+	 };
+	
+	 struct Aluno aluno[10];
+	
+	for( i=1 ; i <=10 ; i++ ){
+		
+	printf("-------------------------------\n");
+		
+	printf("Informe o nome: ");
+	scanf("%[^\n]s",&aluno[i].nome);
+	printf("Nome: %s\n",aluno[i].nome);
+	
+	printf("Informe a matricula: ");
+	scanf("%d",&aluno[i].matricula);
+	printf("Matricula: %d\n",aluno[i].matricula);	
+	
+	fflush(stdin);
+	}
+	
+	fflush(stdin);
+	
+	for( i=1 ; i<=10 ; i++){
+		
+		printf("-------------------------------------\n");
+		printf("\nNome: %s\n",aluno[i].nome);
+		printf("\nMatricula: %d\n",aluno[i].matricula);
+		
+	}
+
+
+	
+	return 0;
+}
