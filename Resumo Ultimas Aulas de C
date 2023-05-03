@@ -1,0 +1,240 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+	
+	int i; 
+	int tamanho_nome=0;
+	char nome[5000000];
+	
+	
+	//strcpy(nome,"Lucas Foda");
+	
+	printf("Informe o nome: ");
+	scanf("%[^\n]s",&nome);
+	
+	printf("Nome infomado: %s\n",nome);
+	printf("Primeiro char de %s: %c\n",nome,nome[0]);
+	
+	printf("Dimensao do nome: %d\n",strlen(nome));
+	
+	tamanho_nome=strlen(nome);
+	
+	printf("Seu nome invertido eh: ");
+	
+	for( i=tamanho_nome-1; i>=0; i--){
+		printf("%c",nome[i]);
+	
+		
+	}
+	printf("\n\nSeu nome espacado: \n");
+	
+	for( i=0; i<tamanho_nome; i++){
+		printf("\n%c",nome[i]);
+	
+		
+	}
+	
+	printf("\n\nSeu nome invertido espacado: \n");
+	for( i=tamanho_nome-1; i>=0; i--){
+		printf("\n%c",nome[i]);
+	
+		
+	}
+	
+	
+	return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main(){
+	
+	int valores[3][3] ={11,2,3,4,57,6,0,8,98}, i, j;
+	
+	for (i=0 ; i < 3; i++){
+		for (j=0; j < 3; j++){
+		
+			printf("[%d] ", valores[i][j]);
+			
+		}
+		printf("\n");
+
+	}
+	
+	return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+	int i=0;
+	
+	 struct Aluno{
+	 	int matricula;
+	 	char nome[20];
+	 	
+	 };
+	
+	 struct Aluno aluno[10];
+	
+	for( i=1 ; i <=10 ; i++ ){
+		
+	printf("-------------------------------\n");
+		
+	printf("Informe o nome: ");
+	scanf("%[^\n]s",&aluno[i].nome);
+	printf("Nome: %s\n",aluno[i].nome);
+	
+	printf("Informe a matricula: ");
+	scanf("%d",&aluno[i].matricula);
+	printf("Matricula: %d\n",aluno[i].matricula);	
+	
+	fflush(stdin);
+	}
+	
+	fflush(stdin);
+	
+	for( i=1 ; i<=10 ; i++){
+		
+		printf("-------------------------------------\n");
+		printf("\nNome: %s\n",aluno[i].nome);
+		printf("\nMatricula: %d\n",aluno[i].matricula);
+		
+	}
+
+
+	
+	return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#define TAM 25
+
+void cabecalho();
+void rodape();
+float le_valida_media();
+float calcular_media(float soma);
+int i;
+
+int main() {
+    float media[TAM], soma, maiorMedia= 0, menorMedia = 10;
+    int aprovados=0, reprovados=0;
+    
+    cabecalho();
+
+    for (i = 1; i <= TAM; i++) {
+        
+        printf("Digite a media do aluno %d: ",i);
+        media[i] = le_valida_media();
+        
+        if ( media[i] >= 6.9) {
+            aprovados++;
+        } else{
+            reprovados++;
+        }
+        
+        if ( media[i] > maiorMedia) {
+            maiorMedia =  media[i];
+        }
+        
+        if ( media[i] < menorMedia) {
+            menorMedia =  media[i];
+        }
+
+        soma += media[i];
+    }
+    printf("--------------------------\n");
+    float mediaTurma = calcular_media(soma);
+    printf("Media da turma: %.1f\n", mediaTurma);
+    printf("Maior nota: %.2f\n", maiorMedia);
+    printf("Menor nota: %.2f\n", menorMedia);
+    printf("Reprovados: %d\n", reprovados);
+    printf("Aprovados: %d\n", aprovados);
+   
+    rodape();
+
+    return 0;
+}
+
+void cabecalho(){
+
+    printf("--------------------------\n");
+    printf("    RELATORIO DE TURMA\n");
+    printf("--------------------------\n");
+}
+
+float le_valida_media() {
+
+    float media[i];
+    do {
+        scanf("%f", &media[i]);
+        if (media[i] < 0 || media[i] > 10) {
+            printf("Valor invalido. Tente novamente.\n");
+        }
+    } while (media[i] < 0 || media[i] > 10);
+    return media[i];
+}
+
+float calcular_media(float soma) {
+
+    return soma / TAM;
+}
+
+void rodape(){
+
+    printf("--------------------------\n");
+    printf("    BSB - 2023");
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main(){
+	
+	int num, maiorNumero=0, menorNumero;
+	
+	printf("-------------------------------\n");
+	printf("MAIOR E MENOR\n");
+	printf("-------------------------------\n");
+	
+	do{
+		
+		printf("Digite um numero: ");
+		scanf("%d",&num);
+		
+		if (num < menorNumero && num >= 0){
+			menorNumero=num;
+		}
+		
+		if (num > maiorNumero){
+			maiorNumero=num;
+		}
+		
+	}
+	while(num>0);
+	
+	printf("--------------------------------");
+	
+	if (num<0){
+		
+		printf("\nO menor numero e: %d",menorNumero);
+		printf("\nO maior numero e: %d",maiorNumero);
+	}	
+		
+	
+	
+	return 0;	
+	}
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
