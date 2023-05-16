@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ 
+	int valores[5]={9,5,1,6,4}, i=0, j=0, aux=0;
+ 
+	printf("Vetor original\n");
+ 
+	for(i=0;i<5;i++){
+		printf("%d\t", valores[i]);		
+	}
+ 
+	for(i=0;i<5-1;i++){
+		for(j=0;j<5;j++){
+			if(valores[j]>valores[j+1]){
+				aux = valores[j+1];
+				valores[j+1] = valores[j];
+				valores[j] = aux;
+			}			
+		}		
+	}
+ 
+	printf("\n\nVetor ordem crescente\n");
+ 
+	for(i=0;i<5;i++){
+		printf("%d\t", valores[i]);		
+	}	
+ 
+ 
+	printf("\n\nVetor ordem decrescente\n");
+ 
+	for(i=0;i<5;i++){
+		printf("%d\t", valores[i]);		
+	}	
+ 
+	return 0;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/*
+ 
+Estrutura de Dados e Algoritmos
+ 
+					 ALGORITMOS
+		BUSCA                          ORDENAÇÃO				
+SEQUENCIAL    BINARIA			       ...				
+ 
+ 
+ordenação
+	Bubble sort
+	Insert
+	Select
+	Quick
+	...
+ 
+*/
+ 
+ 
+ 
